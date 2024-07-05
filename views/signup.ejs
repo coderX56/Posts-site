@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Document</title>
+  </head>
+  <body class="bg-zinc-900 flex justify-center items-center max-h-screen">
+    <div class="bg-zinc-700 p-8 rounded-lg shadow-lg w-96 mt-12">
+      <h1 class="text-center text-white text-5xl font-bold mb-6">Signup</h1>
+      <form class="text-black rounded-xl" method="post" action="/signup">
+        <div class="mb-4">
+          <input
+            class="w-full p-2 border border-gray-300 rounded-lg"
+            type="text"
+            placeholder="Enter your name"
+            name="name"
+            required />
+        </div>
+        <div class="mb-4">
+          <input
+            class="w-full p-2 border border-gray-300 rounded-lg"
+            type="username"
+            placeholder="Enter the username"
+            name="username"
+            required />
+        </div>
+        <div class="mb-4">
+          <input
+            class="w-full p-2 border border-gray-300 rounded-lg"
+            type="number"
+            placeholder="Enter your age"
+            name="age"
+            required />
+        </div>
+        <div class="mb-4">
+          <input
+            class="w-full p-2 border border-gray-300 rounded-lg"
+            type="email"
+            placeholder="Enter the email"
+            name="email"
+            required />
+        </div>
+        <div class="mb-4">
+          <input
+            class="w-full p-2 border border-gray-300 rounded-lg"
+            type="password"
+            placeholder="Enter the password"
+            name="password"
+            required />
+        </div>
+
+        <div class="text-center">
+          <input
+            class="bg-blue-500 w-full text-white p-2 rounded-lg cursor-pointer hover:bg-blue-600"
+            type="submit"
+            value="Sign Up" />
+        </div>
+        <div class="p-4">
+          <h1>
+            Already have an account?<span
+              ><a class="text-blue-500 text-xl" href="/login"> Login</a></span
+            >
+          </h1>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

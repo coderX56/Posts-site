@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="flex flex-col  gap-5 bg-zinc-800 min-h-screen p-5">
+        <div class="flex justify-start text-white"> 
+            <form method="post" action="/post" class="w-full max-w-lg">
+                <h1 class="text-4xl mb-4">Hii <%= user.name %>, What's on your mind?</h1>
+                <div>
+                    <textarea placeholder="Enter the text here" class="w-full h-32 p-4 text-black font-semibold text-xl rounded-md" name="content"></textarea>
+                </div>
+                <div class="flex gap-5 mt-4">
+                    <input type="submit" class="bg-blue-500 w-32 p-2 rounded-md text-white" value="Upload"></input> 
+                    <a href="/logout" class="bg-red-500 w-32 p-2 rounded-md text-white text-center" >Logout</a>
+                </div>
+            </form>
+        </div>
+     <div class="flex flex-row flex-wrap gap-4">
+       <%  user.posts.reverse().forEach((post)=>{%>
+        <div class="flex flex-col bg-zinc-700 p-4 rounded-lg text-white w-full max-w-sm">
+            <h1 class="text-2xl mb-2">Your posts...</h1>
+            <p><%= post.content %></p>
+        </div>
+       
+
+       <%}) %>
+    </div>
+       
+    
+</body>
+</html>
